@@ -33,3 +33,10 @@ nosetests.xml
 .mr.developer.cfg
 .project
 .pydevproject
+
+# me own (Twitter keys)
+test.keys
+keys.keys
+
+# book downlod 
+book/
