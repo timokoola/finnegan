@@ -37,6 +37,7 @@ nosetests.xml
 # me own (Twitter keys)
 test.keys
 keys.keys
+ids.txt
 
 # book downlod 
 book/
