@@ -1,3 +1,4 @@
+#!/usr/bin/python
 import tweepy, sys, os
 from collections import Counter
 import re
@@ -65,12 +66,14 @@ if __name__ == "__main__":
 
     if args.test < 0:
     	tid = read_tweeted(args)
-        tid = tid + 1
-        print "Tweeted line %d." % tid
-        line = lines[tid]
-        line = re.sub(r"^\d+\s+","",line)   
-        line = re.sub(r"\s*\d+$","",line)   
-
+        line = ""
+        while len(line) <= 1:
+            tid = tid + 1
+            print "Tweeted line %d." % tid
+            line = lines[tid]
+            line = re.sub(r"^\d+\s+","",line)   
+            line = re.sub(r"\s*\d+$","",line)   
+        
         try:
             api.update_status(line)
         except tweepy.TweepError:
