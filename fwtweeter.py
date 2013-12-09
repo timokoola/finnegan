@@ -73,11 +73,12 @@ if __name__ == "__main__":
             line = lines[tid]
             line = re.sub(r"^\d+\s+","",line)   
             line = re.sub(r"\s*\d+$","",line)   
-        
+            line = re.sub(r"^\s+$","",line)
         try:
             api.update_status(line)
         except tweepy.TweepError:
-            api.update_status("%s, (%d)" % (line, tid))
+            print "skipping"
+            #api.update_status("%s, (%d)" % (line, tid))
         log_tweeted("%d" % tid,args)
 
     else:
